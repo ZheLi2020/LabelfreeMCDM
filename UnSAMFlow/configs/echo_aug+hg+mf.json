@@ -1,0 +1,24 @@
+{
+    "base_configs": "echo_base.json",
+    "model": {
+        "add_mask_corr": true,
+        "aggregation_type": "concat",
+        "num_down": 3,
+        "output_level": 2
+    },
+    "train": {
+        "stage2": {
+            "epoch": 150,
+            "loss": {
+                "ransac_threshold": 0.5,
+                "smooth_type": "homography",
+                "w_sm": 0.1
+            },
+            "train": {
+                "key_obj_aug": true,
+                "key_obj_count": 3,
+                "w_ar": 0.1
+            }
+        }
+    }
+}

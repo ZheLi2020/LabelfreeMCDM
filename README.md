@@ -35,6 +35,7 @@ Train the feature extractor to learn disentangled motion features.
 ```bash
 cd MAFE
 python train_echo_flow.py
+```
 
 *This stage utilizes pseudo-labels from a pre-trained ReID model and UnSAMFlow.*
 
@@ -45,6 +46,7 @@ Train the latent video diffusion model conditioned on the extracted motion featu
 
 ```bash
 accelerate launch --num_processes 2 --multi_gpu --mixed_precision fp16 echosyn/lvdm/train_motion.py --config echosyn/lvdm/configs/default_uncondition.yaml
+```
 
 ## 📜 Citation
 
@@ -57,6 +59,7 @@ If you find this code or paper useful for your research, please cite:
   journal={MICAD},
   year={2025}
 }
+```
 
 ## 🔗 Related Repositories
 

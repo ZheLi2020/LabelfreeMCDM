@@ -21,7 +21,7 @@ The framework consists of three main components:
 
 
 ## 💾 Dataset Preparation
-This project uses the **EchoNet-Dynamic** dataset. The processing follows EchoNet-Synthetic (https://github.com/HReynaud/EchoNet-Synthetic).
+This project uses the **EchoNet-Dynamic** dataset. The processing follows [EchoNet-Synthetic](https://github.com/HReynaud/EchoNet-Synthetic).
 
     
 

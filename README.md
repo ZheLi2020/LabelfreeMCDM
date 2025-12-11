@@ -23,7 +23,48 @@ The framework consists of three main components:
 ## 💾 Dataset Preparation
 This project uses the **EchoNet-Dynamic** dataset. The processing follows [EchoNet-Synthetic](https://github.com/HReynaud/EchoNet-Synthetic).
 
-    
 
-# Coming soon
+## 🏃 Training
+
+The training process is divided into two stages: feature extraction and diffusion modeling.
+
+### Stage 1: Train MAFE (Motion-Appearance Feature Extractor)
+
+Train the feature extractor to learn disentangled motion features.
+
+```bash
+cd MAFE
+python train_echo_flow.py
+
+*This stage utilizes pseudo-labels from a pre-trained ReID model and UnSAMFlow.*
+
+### Stage 2: Train MCDM (Diffusion Model)
+
+Train the latent video diffusion model conditioned on the extracted motion features.
+* **Hardware:** 2x NVIDIA A100 GPUs (at least 2 GPUs, better 4 GPUs)
+
+```bash
+accelerate launch --num_processes 2 --multi_gpu --mixed_precision fp16 echosyn/lvdm/train_motion.py --config echosyn/lvdm/configs/default_uncondition.yaml
+
+## 📜 Citation
+
+If you find this code or paper useful for your research, please cite:
+
+```bibtex
+@article{,
+  title={Label-free Motion-Conditioned Diffusion Model for Cardiac Ultrasound Synthesis},
+  author={Li, Zhe and Reynaud, Hadrien and M{\"u}ller, Johanna P and Kainz, Bernhard},
+  journal={MICAD},
+  year={2025}
+}
+
+## 🔗 Related Repositories
+
+This work builds upon and relates to the following projects:
+
+* **EchoNet-Synthetic:** [https://github.com/HReynaud/EchoNet-Synthetic](https://github.com/HReynaud/EchoNet-Synthetic)
+* **EMA-VFI:** [https://github.com/MCG-NJU/EMA-VFI](https://github.com/MCG-NJU/EMA-VFI)
+* **UnSAMFlow:** [https://github.com/facebookresearch/UnSAMFlow](https://github.com/facebookresearch/UnSAMFlow)
+* **MedSAM:** [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)
+
 

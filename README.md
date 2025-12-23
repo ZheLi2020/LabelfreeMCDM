@@ -53,10 +53,10 @@ accelerate launch --num_processes 2 --multi_gpu --mixed_precision fp16 echosyn/l
 If you find this code or paper useful for your research, please cite:
 
 ```bibtex
-@article{,
+@article{li2025label,
   title={Label-free Motion-Conditioned Diffusion Model for Cardiac Ultrasound Synthesis},
   author={Li, Zhe and Reynaud, Hadrien and M{\"u}ller, Johanna P and Kainz, Bernhard},
-  journal={MICAD},
+  journal={The International Conference on Medical Imaging and Computer-Aided Diagnosis (MICAD)},
   year={2025}
 }
 ```
